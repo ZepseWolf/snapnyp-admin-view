@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>SnapNyp</title>
+	<link rel="icon" href="images/icon.png">
+	<link href="css/adminstyle.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<script src="js/jquery-3.0.0.js"></script>
+	<script src="js/jquery.canvasjs.min.js"></script>
+	 
+
+    <script type="text/javascript">
+window.onload = function () {
+	var chart = new CanvasJS.Chart("chartContainer",
+	{
+		title:{
+			text: "Percentage of Users Using SnapNYP"             
+		},
+		axisY:{
+			title: "Percent"
+		},
+                animationEnabled: true,
+		toolTip:{
+			shared: true,
+			content: "{name}: {y} - <strong>#percent%</strong>",
+		},
+		data:[
+		{        
+			type: "stackedBar100",
+			showInLegend: true, 
+			name: "May",
+			dataPoints: [
+				{y: 600, label: "SIT" },
+				{y: 400, label: "SBM" },
+				{y: 120, label: "SDIM" },
+				{y: 150, label: "SDN" },
+              {y: 250, label: "SCL" },
+			  {y: 300, label: "SEG" },
+			]
+		},
+		{        
+			type: "stackedBar100",
+			showInLegend: true, 
+			name: "June",
+			dataPoints: [
+				{y: 800, label: "SIT" },
+				{y: 100, label: "SBM" },
+				{y: 150, label: "SDIM" },
+				{y: 300, label: "SDN" },
+              {y: 350, label: "SCL" },
+			  {y: 400, label: "SEG" },
+
+			]
+		}, 
+		{        
+			type: "stackedBar100",
+			showInLegend: true, 
+			name: "July",
+			dataPoints: [
+				{y: 715, label: "SIT" },
+				{y: 215, label: "SBM" },
+				{y: 129, label: "SDIM" },
+				{y: 190, label: "SDN" },
+              {y: 205, label: "SCL" },
+			  {y: 330, label: "SEG" },
+			  ]
+		}  
+		]
+	});
+	chart.render();
+}
+</script>
+
+</head>
+
+<body>
+	<div id="wrapper">
+	
+	
+		<div class="container">
+			<!--menu start-->
+			<div class="row">
+			<a href="dashboard.html"><img style="margin-top: 10px; margin-bottom: 0px;" src="images/logo.png"/></a>
+				<div class="twelve columns">
+				<ul class="menu">
+					<li><a href="dashboard.html">Dashboard</a></li>
+					
+					<li><a href="#">Statistics</a>
+						<ul>
+							<li><a href="statisticsOne.html" class="documents">Visitors Flow</a></li>
+							<li><a href="statisticstwo.html" class="messages">Visitors' Year</a></li>
+							<li><a href="statisticsthree.html"" class="messages">Gender comparison</a></li>
+						</ul>
+					</li>
+					<li><a href="themeandfacts.html">Themes and facts</a></li>
+					<li><a href="qna.html">Q & A</a></li>
+					<li><a href="adminloginpage.html" class="user">MEOWAdmin / Logout </a></li>
+
+				</ul>
+				<div class="breadcrumbs">
+						You are here: <breadcrumbs_border><a href="dashboard.html">Dashboard</a> > <a href="#"  style="color: #656565;">Statistics - Visitors Flow</a>
+				</div>
+				</div>
+				
+			</div>
+			<!--menu end-->
+			<div class="border2">
+			<div class="row">
+				
+				<div class="twelve columns">
+					<div id="chartContainer" style="height: 450px; width: 0px; margin-left: 70px;margin-bottom:10px;">
+					</div>
+				</div>
+				
+			</div>
+			<!---next row--->
+			
+		</div>
+	</div>
+</body>
+</html>

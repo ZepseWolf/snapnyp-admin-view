@@ -1,0 +1,106 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="adminloginpage">
+	<meta name="author" content="160854H">
+	<title>Admin login page</title>
+	<link rel="icon" href="images/icon.png">
+	<link href="css/adminstyle.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<script src="js/jquery-3.0.0.js"></script>
+	<script language="javascript">
+	
+	function getInputField(inputName)
+	{
+		var inputField = document.forms["myForm"][inputName];
+		return inputField;
+	}
+	function doValidate()
+	{
+		var status=true;
+		var messageBox = document.getElementById("message");
+		messageBox.innerHTML = "";
+		
+		
+		x = getInputField("username").value;
+		if (x == null || x == "")
+		{	
+			messageBox.innerHTML += "Please enter your username<br/>";
+			status = false;
+		}
+		
+		y = getInputField("password").value;
+		if ( y== null || y == "")
+		{
+			messageBox.innerHTML += "Please enter your password<br/>";
+			status = false;
+		}
+		else if( x == 123 && y == 123 ){
+		status = true
+		}
+		else{
+		messageBox.innerHTML += "User do not exist<br/>";
+		status = false;
+		}
+		return status;
+	}
+	
+	</script>
+	<script language="javascript">
+	Session["id"] = TextBox1.Text;// just the username</pre>
+
+     page 2(Default2.aspx) in page load 
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetExpires(DateTime.Now.AddDays(-1));
+            Response.Cache.SetNoStore();
+
+                if (Session["id"] == null)
+                {    
+
+                    Response.Redirect("Default.aspx");// redirects to page1(default.aspx)
+
+                }
+                else
+                {
+                    Label1.Text = (string)Session["id"];//just display user name in label
+
+                }
+
+        }
+	</script>
+</head>
+
+<body>
+	<div id="wrapper">
+	<div class="container">
+	<div class="border3">
+		<img style="margin-top: 10px; margin-bottom: 0px;" src="images/logo.png"/>
+		<form name="myForm" action="dashboard.html" method="post" onsubmit="return doValidate()" >
+		<div id="contactform">
+		
+		<div id="message"></div>
+					
+	
+		
+			<h3 style="color:#363636;">Log In</h3>
+		
+				<span class="fieldbox"><input id="login" type="text" name="username" placeholder="Username"></span><br />
+				<span class="fieldbox"><input id="login" type="password" name="password" placeholder="Password"></span><br />
+		
+			<input type="submit"  id="login_buttons" name="sentbutton" value="Log In"/>
+		
+			<p style="font-size:14px;padding-bottom:10px;"><a href="../login.html">Not admin?</a></p>
+		
+		
+		</div>
+		</form>
+	</div>
+	</div>
+	</div>
+	
+</body>
+</html>

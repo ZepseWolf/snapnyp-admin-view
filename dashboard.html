@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="Dashboard">
+	<meta name="author" content="160854H">
+	<title>Dashboard</title>
+	<link rel="icon" href="images/icon.png">
+	<link href="css/adminstyle.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/skeleton.css">
+	<script src="js/jquery-3.0.0.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.slimscroll.min.js"></script>
+	<script type="text/javascript" >
+	$(function(){
+	$('#inner-content-div').slimScroll({
+		 height: '210px'
+		});
+	});
+	
+	</script>
+	<script>
+	// users function 
+	var user1 = setInterval(function(){ myTimer1() }, 6084);
+	var user2 = setInterval(function(){ myTimer2() }, 5709);
+	var user3 = setInterval(function(){ myTimer3() }, 9032);
+	var user4 = setInterval(function(){ myTimer4() }, 11352);
+	
+	function myTimer1() {
+    $(".table").append("<tr><th><a href='#' style='color: #53a4ff;'><img src='images/meow.jpg'/>Meow<a><th><td>has gained 1 points</td></tr>");
+	}
+	function myTimer2() {
+    $(".table").append("<tr><th><a href='#' style='color: #0060cb;'><img src='images/skyblue.jpg'/>BlueASKY<a><th><td>has gained 2 points</td></tr>");
+	}
+	function myTimer3() {
+    $(".table").append("<tr><th><a href='#' style='color: Black;'><img src='images/zent.jpg'/>Zenty<a><th><td>has gained 1 points</td></tr>");
+	}
+	function myTimer4() {
+    $(".table").append("<tr><th><a href='#' style='color: #ff3c3c;'><img src='images/derrick.jpg'/>Derrickroll<a><th><td>has gained 3 points</td></tr>");
+	}
+	
+	window.setInterval(function() {
+	var elem = document.getElementById('inner-content-div');
+	elem.scrollTop = elem.scrollHeight;
+	}, 1);
+	
+	// other part
+	
+	
+    var x = Math.floor((Math.random() * 6000) + 2000);
+    var y = Math.floor((Math.random() * 6000) + 2000);
+	var z = Math.floor((Math.random() * 6000) + 2000);
+	var j = Math.floor((Math.random() * 6000) + 2000);
+	
+	setInterval(function(){ averageTimer() }, x);
+	setInterval(function(){ averageTimer1() }, y);
+	setInterval(function(){ averageTimer2() }, z);
+	setInterval(function(){ averageTimer3() }, j);
+	
+	function averageTimer() {
+    $(".data_avg").text("14.53");
+	$(".data_total").text("12.01");
+	}
+	function averageTimer1() {
+    $(".data_avg").text("14.89");
+	$(".data_total").text("12.31");
+	}
+	function averageTimer2() {
+    $(".data_avg").text("14.01");
+	$(".data_total").text("11.79");
+	}
+	function averageTimer3() {
+    $(".data_avg").text("15.22");
+	$(".data_total").text("10.46");
+	}
+	
+	
+
+	</script>
+	
+	</head>
+
+<body>
+
+	<div id="wrapper">
+		<div class="container">
+			<!--menu start-->
+			<div class="row">
+			<a href="dashboard.html"><img style="margin-top: 10px; margin-bottom: 0px;" src="images/logo.png"/></a>
+				<div class="twelve columns">
+				<ul class="menu">
+					<li><a href="dashboard.html">Dashboard</a></li>
+					
+					<li><a href="#">Statistics</a>
+						<ul>
+							<li><a href="statisticsOne.html" class="documents">Visitors Flow</a></li>
+							<li><a href="statisticstwo.html" class="messages">Visitors' Year</a></li>
+							<li><a href="statisticsthree.html" class="messages">Gender Comparison</a></li>
+						</ul>
+					</li>
+					<li><a href="themeandfacts.html">Themes and facts</a></li>
+					<li><a href="qna.html">Q & A</a></li>
+					<li><a href="adminloginpage.html" class="user">MEOWAdmin / Logout </a></li>
+				</ul>
+				<div class="breadcrumbs">
+						You are here: <breadcrumbs_border><a href="dashboard.html"style=" color: #656565;">Dashboard</a></breadcrumbs_border>
+				</div>
+				</div>
+			</div>
+			<!--menu end-->
+			<div class="row">
+			<div class="twelve columns">
+				<h3><center>Dashboard</center></h3>
+			</div>
+			</div>
+			<div class="row">
+			<div class="six columns">
+			<div class="border_type_one">
+			 Point gained by users
+			 </div>
+				<div class="border_type_two">
+					
+						<div id="inner-content-div">
+							<table class="table">
+							
+							</table>
+						</div>
+					
+				</div>
+			
+			</div>
+			<div class="three columns">
+				<div class="border_type_one" >
+					Total registered users
+				</div>
+				<div class="border_type_two">
+					<div class="data">53.57K</div>
+				</div>
+				
+				<div class="border_type_one" style="margin-top:40px;">
+					Average upload per user
+				</div>
+				<div class="border_type_two">
+					<div class="data_avg">14.32</div>
+				</div>
+			</div>
+			
+			<div class="three columns">
+				<div class="border_type_one">
+					Total active users
+				</div>
+				<div class="border_type_two">
+					<div class="data">39.15K</div>
+				</div>
+				
+				<div class="border_type_one" style="margin-top:40px;">
+					Average time online (min)
+				</div>
+				<div class="border_type_two">
+					<div class="data_total">11.29</div>
+				</div>
+			</div>
+			</div>
+			<!--second row starts here -->
+			<div class="row">
+			<div class="nine columns">
+				<div class="border_type_one" style="margin-top:18px;">
+					Statistics
+				</div>
+				<div class="border_type_three">
+					<div style='float:left; width:32%;text-align:center;padding-left:10px;'>
+						<strong>Visitors Flow</strong>
+						
+					</div>
+					<div style='float:left; width:32%;text-align:center'>
+						<strong>Visitors' Year</strong>
+						
+					</div>
+					<div style='float:left; width:32%;text-align:center'>
+						<strong>Gender Comparison</strong>
+						
+					</div>
+					<div class="data">
+						<a href="statisticsOne.html"><img src="images/statisticOne.jpg"/></a>
+						<a href="statisticstwo.html"><img src="images/statistictwo.jpg"/></a>
+						<a href="statisticsthree.html"><img src="images/statisticthree.jpg"/></a>
+					</div>
+				</div>
+			</div>
+			<div class="three columns">
+				<div class="border_type_one" style="margin-top:18px;">
+					Stocks avaliable 
+				</div>
+				<div class="border_type_two">
+					
+					<table class="stocks" >
+					  <tr>
+						<th>Item</th>
+						<th>Quantity </th>
+					  <tr>
+					  <tr>
+						<td>$5 discount</td>
+						<th>7 </th>
+					  <tr>
+					  <tr>
+						<td>$2 discount</td>
+						<th>10 </th>
+					  <tr>
+					  <tr>
+						<td>10% discount</td>
+						<th>12 </th>
+					  <tr>
+					  <tr>
+						<td>15% discount</td>
+						<th>3 </th>
+					  <tr>
+					</table>
+					
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
